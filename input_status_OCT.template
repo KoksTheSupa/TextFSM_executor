@@ -1,0 +1,12 @@
+Value Role (\S+)
+Value Device_name (\w+\s\w+)
+Value Status (\w+)
+Value Temperature (\d+.\w+)
+Value Bandwidth (\d+.\w+)
+
+Start
+  ^.*PTP role\s+${Role}
+  ^.*Device name\s+${Device_name}
+  ^.*State\s+${Status}.*Temperature\s+${Temperature} 
+  ^.*Bandwidth\s+${Bandwidth} -> Record
+  
